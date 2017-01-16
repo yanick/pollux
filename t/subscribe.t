@@ -5,13 +5,12 @@ use Test::More tests => 1;
 
 use Pollux;
 use Pollux::Action;
-use Pollux::Store;
 
 use experimental 'signatures';
 
 my $Thing = Pollux::Action->new( 'A', 'value' );
 
-my $store = Pollux::Store->new(
+my $store = Pollux->new(
     reducer =>  sub($action,$state='') {
         $state = $action->{value}
     }

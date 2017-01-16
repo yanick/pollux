@@ -3,11 +3,10 @@ use warnings;
 
 use Test::More tests => 2;
 
-use experimental 'switch', 'signatures';
-
 use Pollux;
 use Pollux::Action;
-use Pollux::Store;
+
+use experimental 'switch', 'signatures';
 
 my $AddTodo             = Pollux::Action->new( 'ADD_TODO', 'text' );
 my $CompleteTodo        = Pollux::Action->new( 'COMPLETE_TODO', 'index' );
@@ -33,7 +32,7 @@ sub todos($action=undef,$state=[]) {
     }
 }
 
-my $store = Pollux::Store->new( reducer => {
+my $store = Pollux->new( reducer => {
     visibility_filter => \&visibility_filter,
     todos => \&todos });
 

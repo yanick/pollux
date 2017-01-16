@@ -5,10 +5,10 @@ use warnings;
 
 use Test::More tests => 5;
 
-use experimental 'switch', 'signatures';
-
 use Pollux;
 use Pollux::Action;
+
+use experimental 'switch', 'signatures';
 
 my $AddTodo             = Pollux::Action->new( 'ADD_TODO', 'text' );
 my $CompleteTodo        = Pollux::Action->new( 'COMPLETE_TODO', 'index' );

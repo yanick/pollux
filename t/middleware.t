@@ -4,7 +4,6 @@ use warnings;
 use Test::More tests => 2;
 
 use Pollux;
-use Pollux::Store;
 use Pollux::Action;
 
 use experimental 'signatures';
@@ -18,7 +17,7 @@ my @middlewares =  map {
     } 
 } 1..3;
 
-my $store = Pollux::Store->new(
+my $store = Pollux->new(
     middlewares => \@middlewares,
     reducer => sub($action,$state='') {
         $state . $action->{text}
@@ -32,7 +31,7 @@ is $store->state => 'foo123', "middleware run in order";
 subtest "middleware doing a dispatch" => sub {
     my $Action = Pollux::Action->new( 'ACTION', 'text' );
 
-    my $store = Pollux::Store->new(
+    my $store = Pollux->new(
         middlewares => [
             sub ($store,$next,$action) { $next->( $Action->( $action->{text} . 'o' ) ) },
             sub ($store,$next,$action) { $store->dispatch( $Action->('bar') ) if $action->{text} eq 'foo'; $next->($action) },
