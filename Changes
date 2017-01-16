@@ -1,4 +1,7 @@
 Revision history for Pollux
 
-{{$NEXT}}
+0.0.1 2017-01-16
   - First version, unleashed on an unsuspecting world.
+
+  [ STATISTICS ]
+    - code churn: 5 files changed, 48 insertions(+)
