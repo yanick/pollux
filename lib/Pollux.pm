@@ -51,7 +51,7 @@ B<WARNING:> This is is still thought-experiment alpha-quality software,
 and is likely to change a lot in its next iterations.
 Use with the maximal caveat you can emptor.
 
-This is a Perl port of L<http://redux.js.org|Redux>, done mostly
+This is a Perl port of L<Redux|http://redux.js.org>, done mostly
 to see how easy/hard it'd be. For a longer
 explanation and some implementation details, see
 the L<blog entry|https://www.iinteractive.com/notebook/2016/09/09/pollux.html>.
