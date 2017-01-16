@@ -56,8 +56,6 @@ $unsubscribe->();
 
 $store->dispatch($AddTodo->('One more'));
 
-diag explain $store->state;
-
 is scalar @log => 7, '6 events + initial state';
 
 is_deeply $store->state, {
