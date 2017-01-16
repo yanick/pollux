@@ -54,7 +54,7 @@ Use with the maximal caveat you can emptor.
 This is a Perl port of L<http://redux.js.org|Redux>, done mostly
 to see how easy/hard it'd be. For a longer
 explanation and some implementation details, see
-the L<https://www.iinteractive.com/notebook/2016/09/09/pollux.html|blog entry>.
+the L<blog entry|https://www.iinteractive.com/notebook/2016/09/09/pollux.html>.
 
 
 =cut
