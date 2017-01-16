@@ -4,6 +4,7 @@ Revision history for Pollux
   [ API CHANGES ]
 
   [ BUG FIXES ]
+  - Fix POD errors. (GH#5)
 
   [ DOCUMENTATION ]
 
