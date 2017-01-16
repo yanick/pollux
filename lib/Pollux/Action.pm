@@ -1,4 +1,38 @@
 package Pollux::Action;
+# ABSTRACT: action objects for Pollux stores
+
+=head1 SYNOPSIS
+
+    use Pollux::Action;
+
+    my $AddTodo = Pollux::Action->new( 'ADD_TODO', 'text' );
+
+    # later on...
+    $store->dispatch( $AddTodo->( 'do stuff' ) );
+
+=head1 DESCRIPTION
+
+Creates an action object generator  out of an
+action name and a list of fields. 
+
+The objects overload a few operators to ease combiner
+comparisons: 
+
+    # create the action generator
+    my $AddTodo = Pollux::Action->new( 'ADD_TODO', 'text' );
+
+    my $do_stuff = $AddTodo->( 'do stuff' );
+
+    # stringification resolves to the action type
+    print "$do_stuff";  # prints 'ADD_TODO'
+
+    # turned into a hashref if deferenced
+    my %x = %$do_stuff; # => { type => 'ADD_TODO', text => 'do stuff ' }
+
+    # smart-matching compare the type between two actions
+    print "matching" if $do_stuff ~~ $AddTodo->(); # prints 'matching'
+
+=cut
 
 use strict;
 use warnings;

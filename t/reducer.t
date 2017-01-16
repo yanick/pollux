@@ -35,10 +35,10 @@ sub todos($action=undef,$state=[]) {
     }
 }
 
-my $todo_app = combine_reducers(
+my $todo_app = combine_reducers({
     visibility_filter => \&visibility_filter,
     todos             => \&todos,
-);
+});
 
 my $state = $todo_app->();
 
